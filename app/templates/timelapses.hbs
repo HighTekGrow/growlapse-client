@@ -1,0 +1,31 @@
+<table class="table table-striped">
+  <thead>
+  	<tr>
+  		<th>ID</th>
+  		<th>Name</th>
+  		<th>Running</th>
+  		<th>Length</th>
+  		<th>Interval</th>
+  		<th>Started</th>
+  		<th>Preview</th>
+  		<th>Delete</th>
+  	</tr>
+  </thead>
+  <tbody>
+  	{{#each model as |timelapse|}}
+    <tr>
+    	<td>{{timelapse.id}}</td>
+    	<td>{{timelapse.name}}</td>
+    	<td>
+    		{{if timelapse.running "Running" "Not Running"}}
+    	</td>
+    	<td>{{timelapse.length}} Seconds</td>
+    	<td>{{timelapse.interval}} Seconds</td>
+    	<td>{{timelapse.time_started}}</td>
+    	<td><span class="glyphicon glyphicon-play" {{action 'preview' timelapse}} style="margin-left: 20px"></span></td>
+    	<td><span class="glyphicon glyphicon-trash" {{action 'delete' timelapse}} style="margin-left: 15px"></span></td>
+    </tr>
+  {{/each}}
+  </tbody>
+ </table>
+

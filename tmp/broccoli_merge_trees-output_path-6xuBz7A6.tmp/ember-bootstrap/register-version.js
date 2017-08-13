@@ -1,0 +1,1 @@
+/Users/passport/repo/growlapse-client/growlapse-client/tmp/broccoli_persistent_filtermapper-output_path-NJMOXZF1.tmp/ember-bootstrap/register-version.template

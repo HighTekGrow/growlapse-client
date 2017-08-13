@@ -1,0 +1,1 @@
+/Users/passport/repo/growlapse-client/growlapse-client/node_modules/ember-wormhole/app/components/ember-wormhole.js
