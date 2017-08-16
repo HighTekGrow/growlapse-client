@@ -1,6 +1,32 @@
 <div style="width: 50%; margin-left: 25%">
-	<input id="create-name" type="text" class="form-control" placeholder="Name" style="margin-bottom: 20px; margin-top: 20px">
-	<input id="create-length" type="text" class="form-control" placeholder="Length In Seconds" style="margin-bottom: 20px">
-	<input id="create-interval" type="text" class="form-control" placeholder="Interval" style="margin-bottom: 20px">
+    <input id="create-name" type="text" class="form-control" placeholder="Name" style="margin-bottom: 20px; margin-top: 20px">
+    <div style="display: inline-block; width: 100%">
+        <div style="display: inline-block; width: 50%; float: left">
+            <input id="create-length" type="text" class="form-control" placeholder="Length" style="margin-bottom: 20px">
+        </div>
+        <div style="display: inline-block; width: 45%; float: right">
+            <select class="form-control" id="create-length-unit">
+                <option>Seconds</option>
+                <option>Minutes</option>
+                <option>Hours</option>
+                <option>Days</option>
+                <option>Months</option>
+            </select>
+        </div>
+    </div>
+   <div style="display: inline-block; width: 100%">
+        <div style="display: inline-block; width: 50%; float: left">
+            <input id="create-interval" type="text" class="form-control" placeholder="Interval" style="margin-bottom: 20px">
+        </div>
+        <div style="display: inline-block; width: 45%; float: right">
+            <select class="form-control" id="create-interval-unit">
+                <option>Seconds</option>
+                <option>Minutes</option>
+                <option>Hours</option>
+                <option>Days</option>
+                <option>Months</option>
+            </select>
+        </div>
+    </div>
 	<button class="btn btn-primary" style="float: right" {{action 'create'}}>Create</button>
 </div>
