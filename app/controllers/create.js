@@ -1,5 +1,6 @@
 import Ember from 'ember';
 import DateConversion from '../utils/DateConversion';
+import ENV from 'growlapse-client/config/environment';
 
 export default Ember.Controller.extend({
 	actions: {
@@ -43,7 +44,6 @@ export default Ember.Controller.extend({
                     break;
             }
 
-
 			// TODO create or use input validator
 			if (name.length) {
 				var params = {
@@ -54,7 +54,7 @@ export default Ember.Controller.extend({
 
 				var t = this;
 				Ember.$.ajax({
-	                url: 'http://127.0.0.1:5002/timelapse',
+	                url: 'http://' + ENV.APP.SERVER_IP + ':5002/timelapse',
 	                type: 'POST',
 	                data: params,
 	                success: function (response) {
