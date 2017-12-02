@@ -1,18 +1,19 @@
 import Ember from 'ember';
+import ENV from 'growlapse-client/config/environment';
 
 export default Ember.Controller.extend({
 	actions:{
 		getTimeLapses: function () {
 			var set = this.set.bind(this, 'model');
-	    	Ember.$.getJSON('http://127.0.0.1:5002/timelapse').then(set);
+	    	Ember.$.getJSON('http://' + ENV.APP.SERVER_IP + ':5002/timelapse').then(set);
 		},
 		preview: function (time_lapse) {
-			window.open("http://127.0.0.1:5002/preview/" + time_lapse.id);
+			window.open('http://' + ENV.APP.SERVER_IP + ':5002/preview/' + time_lapse.id);
 		},
 		delete: function (time_lapse) {
 			var t = this;
 			Ember.$.ajax({
-                url: 'http://127.0.0.1:5002/timelapse/' + time_lapse.id,
+                url: 'http://' + ENV.APP.SERVER_IP + ':5002/timelapse/' + time_lapse.id,
                 type: 'DELETE',
                 success: function (response) {
                 	t.set('model', response);
